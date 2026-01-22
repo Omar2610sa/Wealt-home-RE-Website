@@ -27,3 +27,14 @@ facIcon.forEach(facIcon => {
 const Year = document.querySelector(".year")
 const currentYear = new Date().getFullYear()
 Year.textContent = currentYear
+
+// Scroll to top
+const scrollTopBtn = document.querySelector(".scroll-top-btn")
+window.addEventListener("scroll", ()=>{
+    scrollTopBtn.classList.toggle("active", window.scrollY > 200 ? "add" : "remove"("active"))
+})
+
+scrollTopBtn.addEventListener("click", ()=>{
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+})
